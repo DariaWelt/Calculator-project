@@ -3,7 +3,7 @@
 
 #include "Stack.h"
 #include "Numbers.h"
-#include "Calculating.h"
+#include "сalc.h"
 #include "Helps.h"
 #include <math.h>
 #include <stdio.h>
@@ -11,6 +11,7 @@
 #include <ctype.h>
 #include <string.h>
 
+// to avoid warnings issued by pvs
 char FromDoubleToChar(double arg) {
   int number = 0;
   while (number < floor(arg)) {
