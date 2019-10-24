@@ -1,10 +1,10 @@
 // This is a personal academic project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-#include "Stack.h"
-#include "Numbers.h"
+#include "stack.h"
+#include "numbers.h"
 #include "сalc.h"
-#include "Helps.h"
+#include "help.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
