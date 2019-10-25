@@ -5,16 +5,16 @@ The programe that calculates string expressions, supports brackets and handles e
 ## 1. Form of programe.
 
 
-#### 1.1. Programming language: ANSI C, 1989 standard, plus Microsoft add-ons (ex., crtdbg.h debugging); 
+**1.1. Programming language: ANSI C, 1989 standard, plus Microsoft add-ons (ex., crtdbg.h debugging);**
 
-#### 1.2. Algorithm: conversion to inverse Polish notation with its calculation;
+**1.2. Algorithm: conversion to inverse Polish notation with its calculation;**
 
 
 
 ## 2. Form of testing program.
 
 
-#### 2.1. The program is a console application (Win32 Console Application);
+**2.1. The program is a console application (Win32 Console Application);**
 
   2.1.1. If the program is run without parameters, the input data is read from the standard stream, line 
   by line, to the end of the stream;
@@ -51,8 +51,8 @@ The programe that calculates string expressions, supports brackets and handles e
   2.1.10. There is no explicit or implicit limit on the length of the input (and output) string. The
   program correctly reads and processes strings of any length;
 
-#### 2.2. The principle of modularity is observed: the algorithm is logically and physically separated from
-the user interface.
+**2.2. The principle of modularity is observed: the algorithm is logically and physically separated from
+the user interface.**
 
 2.2.1. The computational algorithm is designed as a separate function that takes as input a string in
 which the expression is written (double Calculate(char * expression, type_errors_t* ERR));
@@ -62,7 +62,7 @@ the keyboard or display. It is divided into auxiliary subfunctions that perform 
 
 2.2.3. This main and all auxiliary functions are placed in a separate module (s); have their own header file;
 
-#### 2.3 Run-time errors are handled.
+**2.3 Run-time errors are handled.**
 
 2.3.1. The program is maximally protected from incorrect input data ("foolproof"), input / output errors, as
 well as from errors that occur during calculations (such as division by zero);
@@ -76,21 +76,21 @@ entire expression, and the input data is correctly skipped to the beginning of t
 the next expression). The program does not crash, the lack of memory for one expression does not mean that
 it will not be enough for the rest.
 
-#### 2.4. The program is tested by a special tool-Linter (PVS-Studio), which helps to detect a large number of
+**2.4. The program is tested by a special tool-Linter (PVS-Studio), which helps to detect a large number of
 logical errors and inaccuracies. Most of the identified bugs and instabilities (potential bugs) have been
-fixed, primarily at the High and Medium levels.
+fixed, primarily at the High and Medium levels.**
 
 
 
 ## 3. The functionality of the counting module.
 
 
-#### 3.1. Expressions are a set of operands separated by operation signs with corresponding precedence and
+**3.1. Expressions are a set of operands separated by operation signs with corresponding precedence and
 associativity known from mathematics and / or C and other languages. There is no explicit or implicit limit
 on the complexity of the expression except for the lack of RAM. The algorithm correctly and quickly reads
-and processes expressions of any complexity (as well as strings of any length).
+and processes expressions of any complexity (as well as strings of any length).**
 
-#### 3.2. The operands may be:
+**3.2. The operands may be:**
 
 3.2.1. Integers (constants);
 
@@ -98,7 +98,7 @@ and processes expressions of any complexity (as well as strings of any length).
 
 3.2.3. The named constants pi and e are specified with sufficient (maximum possible) precision.
 
-#### 3.3. Basic arithmetic operations are supported:
+**3.3. Basic arithmetic operations are supported:**
 
 3.3.1. Unary minus (−a). Does not require parentheses for correct calculation of several cons in a row,
 because the order of calculations is determined uniquely: 1+---2 = -1;
@@ -110,8 +110,8 @@ minus: -2^2 = -4;
 3.3.3. Parentheses for grouping (overriding priority). Parentheses are not required in the case where the
 order of application of operations is clear and unambiguously defined.
 
-#### 3.4. In addition to operations, formulas can contain function calls of the form "sin(5)" (a kind of unary
-operation). Brackets may or may not be present. The following features must be supported:
+**3.4. In addition to operations, formulas can contain function calls of the form "sin(5)" (a kind of unary
+operation). Brackets may or may not be present. The following features must be supported:**
 
 3.4.1. root (sqrt);
 
@@ -123,10 +123,10 @@ operation). Brackets may or may not be present. The following features must be s
 
 3.4.5. a logarithm function on an arbitrary basis “log(a, x)” from two arguments.
 
-#### 3.5. Formulas can contain any whitespace characters that do not interfere with calculations (the free form
-of the expression record), that is, do not break the lexeme into parts.
+**3.5. Formulas can contain any whitespace characters that do not interfere with calculations (the free form
+of the expression record), that is, do not break the lexeme into parts.**
 
-#### 3.6. Storing intermediate results in temporary variables and using them as operands. This involves sequentially
+**3.6. Storing intermediate results in temporary variables and using them as operands. This involves sequentially
 counting multiple expressions listed through semicolons, returning the value of the last one. An example of such
 an expression is "x = 2 * 2; y = 1 + 2; x^y + x", its value is 68. The values of temporary variables are not
-stored and cannot be used in the following expressions.
+stored and cannot be used in the following expressions.**
